@@ -38,6 +38,6 @@ Route::get('/category/{category}', 'CategoryController@show');
 Route::get('/category/{category}/edit', 'CategoryController@edit');
 Route::put('/category/{category}', 'CategoryController@update');
 Route::delete('/category/{category}', 'CategoryController@destroy');
-
-
 */
+
+Route::resource('product', 'ProductController');
