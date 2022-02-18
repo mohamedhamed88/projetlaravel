@@ -26,4 +26,24 @@ class CategoryController extends Controller
             'donnee' => $category
         ], Response::HTTP_OK);
     }
+
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        return response()->json([
+            'success' => true,
+        ], Response::HTTP_OK);
+    }
+
+
+    public function addCategory(Request $request)
+    {
+        Category::create([
+            'category' => $request->category
+        ]);
+        return response()->json([
+            'success' => true,
+        ], Response::HTTP_OK);
+    }
 }
